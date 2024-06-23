@@ -5,17 +5,43 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
+
+import tw from 'twrnc'; //Import TailWind CSS.
+//style={tw``}
+
+//Saldo Total
+const saldoTotal = "15,000";
+const montoSaldoTotal = "$" + saldoTotal;
+const moreSaldoTotal = "Banco + Billetera";
+
+//Saldo Real
+const totalReal = "20,000";
+const montoTotalReal = "$" + totalReal;
+const moreTotalReal = "Monto Total";
+
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-    </ParallaxScrollView>
+    <ThemedView style={styles.titleContainer}>
+        <ThemedView style={tw`flex-row justify-center w-full text-center`}>
+          <ThemedView style={tw`mx-8`}>
+            <ThemedText type="subtitle">Saldo Total</ThemedText>
+            <ThemedText style={tw`text-center`} type="default">{montoSaldoTotal}</ThemedText>
+            <ThemedText style={tw`text-center`} type="default">{moreSaldoTotal}</ThemedText>
+          </ThemedView>
+          <ThemedView style={tw`mx-8`}>
+            <ThemedText type="subtitle">Total Real</ThemedText>
+            <ThemedText style={tw`text-center`} type="default">{montoTotalReal}</ThemedText>
+            <ThemedText style={tw`text-center`} type="default">{moreTotalReal}</ThemedText>
+          </ThemedView>
+        </ThemedView>
+
+      <ThemedView style={tw`mt-10`}>
+        <ThemedText type='subtitle'>Aqui van las tablas</ThemedText>
+      </ThemedView>
+
+
+
+    </ThemedView>
   );
 }
 
