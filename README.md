@@ -7,9 +7,17 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 1. Install dependencies
 
    ```bash
+   Front
    npm install
+   npm install axios
    npm install expo-router
    npm install twrnc
+
+   Back
+   npm init
+   npm install mysql2
+   npm install express
+   npm install nodemon
    ```
 
 2. Start the app
