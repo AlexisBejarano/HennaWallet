@@ -34,7 +34,9 @@ export default function HomeScreen() {
           </ThemedView>
         </ThemedView>
 
-        <ThemedView style={tw`mx-8 w-35 h-35 my-auto mx-auto`}>
+        <ThemedView style={tw`w-200 flex-row`}>
+        
+        <ThemedView style={tw`mx-8 w-35 h-35 my-auto mx-auto float-right`}>
           <ThemedText style={tw`text-center`} type="subtitle">Banco</ThemedText>
           <ThemedText style={tw`text-center`} type="subtitle">BBVA</ThemedText>
           <ThemedText style={tw`text-center`} type="subtitle">Salario Actual</ThemedText>
@@ -44,21 +46,21 @@ export default function HomeScreen() {
 
         <DataTable>
           <DataTable.Header>
-            <DataTable.Title style={styles.movimientosColumnTop}>Movimientos</DataTable.Title>
-            <DataTable.Title style={styles.resumenColumnTop}>Resumen</DataTable.Title>
-            <DataTable.Title style={styles.fechaColumn}>Fecha</DataTable.Title>
+            <DataTable.Title style={tw`flex-1 justify-center`}>Movimientos</DataTable.Title>
+            <DataTable.Title style={tw`flex-3 justify-center`}>Resumen</DataTable.Title>
+            <DataTable.Title style={tw`flex-1 justify-center`}>Fecha</DataTable.Title>
           </DataTable.Header>
 
           <DataTable.Row>
-            <DataTable.Cell>2000</DataTable.Cell>
-            <DataTable.Cell style={styles.resumenColumn}>Pago de renta</DataTable.Cell>
-            <DataTable.Cell style={styles.fechaColumn}>05/24/2024</DataTable.Cell>
+            <DataTable.Cell style={tw`flex-1 justify-center`}>2000</DataTable.Cell>
+            <DataTable.Cell style={tw`flex-3`}>Pago de renta</DataTable.Cell>
+            <DataTable.Cell style={tw`flex-1 justify-center`}>05/24/2024</DataTable.Cell>
           </DataTable.Row>
 
           <DataTable.Row>
-            <DataTable.Cell>100</DataTable.Cell>
-            <DataTable.Cell style={styles.resumenColumn}>asdasdasd</DataTable.Cell>
-            <DataTable.Cell style={styles.fechaColumn}>25/03/2024</DataTable.Cell>
+            <DataTable.Cell style={tw`flex-1 justify-center`} >100</DataTable.Cell>
+            <DataTable.Cell style={tw`flex-3`}>asdasdasd</DataTable.Cell>
+            <DataTable.Cell style={tw`flex-1 justify-center`}>25/03/2024</DataTable.Cell>
           </DataTable.Row>
 
           <DataTable.Pagination
@@ -70,6 +72,7 @@ export default function HomeScreen() {
             label="1-2 of 6"
           />
         </DataTable>
+        </ThemedView>
       </ThemedView>
     </ThemedView>
   );
@@ -79,25 +82,6 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
-  },
-  movimientosColumnTop: {
-    flex: 1, // Movimientos será más estrecho
-    justifyContent: 'center',
-  },
-  movimientosColumn: {
-    flex: 1, // Movimientos será más estrecho
-    justifyContent: 'center',
-  },
-  resumenColumn: {
-    flex: 3, // Resumen será más ancho
-  },
-  resumenColumnTop: {
-    flex: 3, // Resumen será más ancho
-    justifyContent: 'center',
-  },
-  fechaColumn: {
-    flex: 1, // Fecha también será más estrecho
-    justifyContent: 'center',
   },
 });
 
